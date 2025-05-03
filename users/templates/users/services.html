@@ -1,0 +1,19 @@
+{% extends "users/base.html" %}
+{% block title %}Serices available{% endblock %}
+    {% block content %}
+    <h1>Our Services</h1>
+    <p>We offer a wide range of services to help you manage and optimize your data inventory:</p>
+    <ul class="services-list">
+        
+        {% if user.is_authenticated %}
+            <h1>Welcome back, {{ user.username }}!</h1>
+            <h5>Here are some personalized features for you:</h5>
+
+        {% else %}
+            <h1>Welcome to our website</h1>
+            <h5>Please login or register to access more features.</h5> 
+        {% endif %}   
+        </li>
+    </ul>
+
+    {% endblock %}

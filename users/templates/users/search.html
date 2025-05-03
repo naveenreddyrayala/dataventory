@@ -1,0 +1,21 @@
+{% extends "users/base.html" %}
+{% block title%} Receives {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% if user.is_authenticated %}
+        <input type="text" id="search-box" placeholder="Search inventory...">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("search-box").autocomplete({
+                source: "/search/",
+                minLength: 2
+            });
+        });
+        </script>
+{% else %}
+        <h1>Welcome to our website</h1>
+        <h5>Please login or register to access more features.</h5>    
+{% endif %}
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "users/base.html" %}
+{% block title %}profile{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% if user.is_authenticated %}
+    <div class="container">
+        <h1>Receives List</h1>
+        <table border="1" class="table table-striped">
+            <tr>
+                <th>Item Data</th>
+                <th>Quantity</th>
+                <th>Supplier</th>
+                <th>Date</th>
+            </tr>
+            {% for obj in data %}
+            <tr>
+                <td>{{ obj.item_data }}</td>
+                <td>{{ obj.quantity }}</td>
+                <td>{{ obj.supplier }}</td>
+                <td>{{ obj.received_date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+    </div>
+{% else %}
+        <h1>Welcome to our website</h1>
+        <h5>Please login or register to access more features.</h5>    
+{% endif %}
+
+{% endblock%}

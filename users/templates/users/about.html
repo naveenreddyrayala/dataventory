@@ -1,0 +1,13 @@
+{% extends "users/base.html" %}
+{% block title%} Home {% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+        <h1>Welcome back, {{ user.username }}!</h1>
+        <h5><u>Address:</u></h5>
+        <h5>Medchal, Hyderabad, Telangana-501401</h5>
+        <h5>Contact details: 9951992380, hello@dataventory.com</h5>
+    {% else %}
+        <h1>Welcome to our website</h1>
+        <h5>Please login or register to access more features.</h5>    
+    {% endif %}
+{% endblock %}

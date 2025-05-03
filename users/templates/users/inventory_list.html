@@ -1,0 +1,21 @@
+{% extends "users/base.html" %}
+{% block title %}profile{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% if user.is_authenticated %}
+{% load django_tables2 %}
+{% load crispy_forms_tags %}
+
+<form method="get">
+    {{ filter.form|crispy }}
+    <button type="submit">Filter</button>
+</form>
+
+{% render_table table %}
+
+{% else %}
+        <h1>Welcome to our website</h1>
+        <h5>Please login or register to access more features.</h5>    
+{% endif %}
+
+{% endblock%}

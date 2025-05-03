@@ -1,0 +1,21 @@
+{% extends "users/base.html" %}
+{% block title%} Home {% endblock %}
+    {% block content %}
+    {% if user.is_authenticated %}
+        <h1>Welcome back, {{ user.username }}!</h1>
+        <h5>Here are some personalized features for you:</h5>
+        <ul>
+            <li><a href="/profile">View Profile</a></li>
+            <li><a href="/settings">Account Settings</a></li>
+            <li><a href="/receives">Recevies</a></li>
+        </ul>    
+    
+    {% else %}
+        <h1>Welcome to our website</h1>
+        <h5>Please login or register to access more features.</h5>    
+    {% endif %}
+    {% endblock %}
+
+
+                
+                   

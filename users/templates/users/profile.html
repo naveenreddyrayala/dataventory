@@ -1,0 +1,15 @@
+{% extends "users/base.html" %}
+{% block title %}profile{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% if user.is_authenticated %}
+    <div class="container"></div>
+    <h2>{{user.username}}</h2>
+    <h2>{{user.email}}</h2>
+    </div>
+{% else %}
+        <h1>Welcome to our website</h1>
+        <h5>Please login or register to access more features.</h5>    
+{% endif %}
+
+{% endblock%}
